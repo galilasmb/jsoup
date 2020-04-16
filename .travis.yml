@@ -1,4 +1,26 @@
+
+sudo: required
 language: java
-cache:
-  directories:
-  - $HOME/.m2
+
+jdk:
+  - openjdk8
+
+script:
+  - mvn package -DskipTests
+
+before_deploy:
+    - mkdir MiningBuild
+    - find . -name '*.jar' -exec cp {} ./MiningBuild \;
+    - cd /home/travis/build/galilasmb/jsoup/MiningBuild
+    - tar -zcvf result.tar.gz *
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: result.tar.gz
+  name: fetchjar-e38b916ba1ebd3f5c00a6b6b8e77a4cdfea2800f
+  file_glob: true
+  overwrite: false
+  skip_cleanup: true
+  on:
+    all_branches: true 
+            
