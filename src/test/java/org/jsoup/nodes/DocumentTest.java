@@ -1,25 +1,19 @@
 package org.jsoup.nodes;
 
-import org.jsoup.Jsoup;
-import org.jsoup.TextUtil;
-import org.jsoup.integration.ParseTest;
-import org.jsoup.nodes.Document.OutputSettings;
-import org.jsoup.nodes.Document.OutputSettings.Syntax;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
 import java.nio.charset.Charset;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import java.io.StringWriter;
+import org.jsoup.Jsoup;
+import org.jsoup.TextUtil;
+import org.jsoup.integration.ParseTest;
+import org.jsoup.nodes.Document.OutputSettings;
+import org.junit.Test;
+import org.junit.Ignore;
+import org.jsoup.nodes.Document.OutputSettings.Syntax;
+import static org.junit.Assert.*;
 
 /**
  Tests for Document.
